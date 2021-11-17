@@ -1,0 +1,306 @@
+<html><head>
+<title>Cake n Bake</title>
+{% load static %}
+<link rel="shortcut icon" type="image/png" href="{%  static 'Cake.ico' %}"/>
+
+{% block body %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Croissant+One|Ruluko|Courgette|Satisfy|Playball|Cookie|Boogaloo|Handlee|Bellefair" rel="stylesheet">
+<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<!-- Material Design icon font -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.navbar-default {
+    background-color: #000000;
+    border-color: #000000;
+	margin-bottom:0px;
+}
+
+/* Title */
+.navbar-default .navbar-brand {
+    color: #ffffff;
+	font-family: 'Croissant One', cursive;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color:#F909B4;
+}
+/* Link */
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color:#F909B4;
+}
+.navbar-nav{
+text-align: center;
+}
+@media (min-width: 768px) {
+  ul.nav li:hover > ul.dropdown-menu {
+    display: block;
+  }
+.vasu {
+ padding: 20px;
+  background: #fafafa;
+  position: relative;
+  background-image:url('/Static/Pic/orders.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px; 
+}
+body, html {
+    height: 100%;
+    margin: 0;
+	padding:0;
+}
+.container{
+min-height:100%;
+position:relative;
+}
+.footer {
+    padding: 50px 20px;
+    background-color: #35404f;
+    color: #878c94;
+}
+.footer .title{text-align: left;color:#fff;font-size:25px;}
+
+
+.footer .social-icon{padding:0px;margin:0px;}
+.footer .social-icon a{display:inline-block;color:#fff;font-size:25px;padding:5px;}
+.footer .acount-icon a{display:block;color:#fff;font-size:18px;padding:5px;text-decoration:none;}
+.footer .acount-icon .fa{margin-right:25px;}
+
+
+.footer .category a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 20px;
+    margin: 1px;
+    border-radius:4px;
+    margin-top: 6px;
+    background-color: black;
+    border: solid 1px #fff;
+}
+
+.footer .payment{margin:0px;padding:0px;list-style-type:none}
+.footer .payment li{list-style-type:none}
+.footer .payment li a {
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    float: left;
+    font-size: 25px;
+    padding: 10px 10px;
+}
+.container-Foot{
+}
+
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+	<div class="navbar-header">
+      <a class="navbar-brand" href="{% url 'Account_Login:Home' %}">Cake n Bake</a>
+    </div>
+	<div style ="margin-left:400px">
+    <ul class="nav navbar-nav navbar-center">
+	    <li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-family: 'Courgette', cursive;font-size:18px;">Shop By Category</a>
+			<ul class="dropdown-menu" role="menu" style="font-family: 'Courgette', cursive;font-size:18px;">
+			<li><a href="{% url 'Cataloge:Product_Index_Cakes' %}">Cakes</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Chocolates' %}">Chocolates</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Gifts' %}">Gifts</a></li>
+		</ul></li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-family: 'Courgette', cursive;font-size:18px;">Shop By Relation</a>
+			<ul class="dropdown-menu" role="menu" style="font-family: 'Courgette', cursive;font-size:18px;">
+			<li><a href="{% url 'Cataloge:Product_Index_Parents' %}">Parents</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Siblings' %}">Siblings</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Kids' %}">kids</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Girlfriend' %}">Girlfriend</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Boyfriend' %}">Boyfriend</a></li>
+		</ul></li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-family: 'Courgette', cursive;font-size:18px;">Shop By Occasion</a>
+			<ul class="dropdown-menu" role="menu" style="font-family: 'Courgette', cursive;font-size:18px;">
+			<li><a href="{% url 'Cataloge:Product_Index_Birthday' %}">Birthdays</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Anniversary' %}">Anniversary</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Weddings' %}">Weddings</a></li>
+		</ul></li>
+    
+    </ul>
+	</div>
+	<div>
+    <ul class="nav navbar-nav navbar-right" style="font-family: 'Courgette', cursive;font-size:18px;">
+      <li><a href="{% url 'Services:Cart_View' request.user %}"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+	  {% if user.is_authenticated %}
+	  <li style="font-family: 'Courgette', cursive;font-size:18px;"><a>Hello  
+	  
+		{{request.user}}
+		{% if request.user.profile.pic %}
+		<img src="{{request.user.profile.pic.url}}" class="img-circle" width="30px" height="30px"/>
+		{% endif %}</a>
+	  {% else %}
+		<li><a href="{% url 'Account_Login:Here' %}">Login</a></li>
+	  {% endif %}
+<ul class="dropdown-menu" role="menu" style="font-family: 'Courgette', cursive;font-size:18px;">
+			<li><a href="{% url 'Services:Myorder' request.user %}">My Orders</a></li>
+			<li><a href="{% url 'Services:Wishlist' request.user %}">Wishlist</a></li>
+			<li><a href="{% url 'Account_Login:Profile' %}">Profile</a></li>
+			<li><a href="{% url 'Account_Login:Logout' %}">Logout</a></li>
+		</ul></li>
+    </ul>
+  </div>
+  </div>
+  </nav>
+			<div class ='vasu'><center>
+				<table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--16dp">
+				
+					<thead>
+						<tr>
+							<th class='mdl-data-table__cell--non-numeric' style="font-family: 'Handlee',cursive;font-size:24px;">Order No</th>
+							<th class='mdl-data-table__cell--non-numeric' style="font-family: 'Handlee',cursive;font-size:24px;">Products</th>
+							<th class="text-center"; style="font-family: 'Handlee',cursive;font-size:24px;">Date of Order</th>
+							<th class='mdl-data-table__cell--non-numeric' style="font-family: 'Handlee',cursive;font-size:24px;">Quantity</th>
+							<th class="text-center"; style="font-family: 'Handlee',cursive;font-size:24px;">&nbsp;&nbsp;&nbsp;Price</th>
+							<th class="text-center"; style="font-family: 'Handlee',cursive;font-size:24px;">Total</th>
+							<th> </th>
+						</tr>
+					</thead>
+					<tbody>
+					{% for i in wish %}
+						<tr>
+							<td class="col-sm-8 col-md-6">
+							<div class='mdl-data-table__cell--non-numeric'>
+							<div class="media-body">
+											<h4 class="media-heading">&nbsp;<a href="#" style="font-family: 'Boogaloo', cursive;font-size:18px;">{{ i.Order_id }}</a></h4>
+											<!--<span>Status: </span><span class="text-success"><strong>In Stock</strong></span>-->
+								</div>
+							</div></td>
+							<td class="col-sm-8 col-md-6">
+							<div class='mdl-data-table__cell--non-numeric'>
+								<a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{ i.Product_Name.Pic.url }}" style="width: 72px; height: 72px;"> </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<div class="media-body">
+											<h4 class="media-heading">&nbsp;<a href="#" style="font-family: 'Boogaloo', cursive;font-size:18px;">{{ i.Product_Name }}</a></h4>
+											<h5 class="media-heading">&nbsp; by Cake n Bake</h5>
+											<!--<span>Status: </span><span class="text-success"><strong>In Stock</strong></span>-->
+								</div>
+							</div></td>
+							<td class="col-sm-1 col-md-1 text-center"><strong style="font-family: 'Bellefair',serif;font-size:20px;">{{ i.Date_of_Purchase }}</strong></td>
+							<td class="col-sm-1 col-md-1" style="text-align: center"><strong style="font-family: 'Bellefair',serif;font-size:20px;">{{ i.Qty }}</strong></td>&nbsp;&nbsp;&nbsp;&nbsp;
+							<td class="col-sm-1 col-md-1 text-center"><strong style="font-family: 'Bellefair',serif;font-size:20px;">{{ i.Price }}</strong></td>
+							<td class="col-sm-1 col-md-1 text-center"><strong style="font-family: 'Bellefair',serif;font-size:20px;">{{ i.T_Price }}</strong></td>
+							</td>
+						</tr>
+					{% endfor %}
+						
+			
+						<tr>
+							<td>   </td>
+							<td>   </td>
+							<td>   </td>
+							<td><h3>Total</h3></td>
+							<td class="text-right"><h3><p style="font-family: 'Bellefair',serif;font-size:24px;bold;" id="demo"></p></h3></td>
+							<td>	</td>
+						</tr>
+						<tr>
+							<td>   </td>
+							<td>   </td>
+							<td>   </td>
+							<!--<td><a href="{% url 'Account_Login:Home' %}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" role='button'><span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping</a>
+							</td>
+							<td>
+							<button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+								Checkout <span class="glyphicon glyphicon-play"></span>
+							</button></td>-->
+						</tr>
+					</tbody>
+					<script>
+				
+					text=0;
+		{% for i in wish %}
+		text =text+{{i.T_Price}};
+		{% endfor %}
+	document.getElementById("demo").innerHTML = text;
+
+	</script>
+	
+				</table></center>
+				</div>
+<footer class="footer">
+    <div class="container-Foot">
+        <div class="row">
+        <div class="col-sm-3">
+		<img src="/Static/Cake.ico" style="width:50px;height:auto;margin-top:8px;" class="navbar-logo pull-left"/>
+            <h4 class="title">Cake n Bake</h4>
+            <p>Birthdays, proposals, baby showers or farewells, weddings or anniversaries, Cake n Bake will help you create them effortlessly.</p>
+			<a href="{% url 'Account_Login:About' %}">Wanna Know More..</a>
+            <ul class="social-icon">
+            <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+            </ul>
+            </div>
+        <div class="col-sm-3">
+            <h4 class="title">My Account</h4>
+            <span class="acount-icon">          
+            <a href="{% url 'Services:Wishlist' request.user %}"><i class="fa fa-heart" aria-hidden="true"></i> Wish List</a>
+            <a href="{% url 'Services:Cart_View' request.user %}"><i class="fa fa-cart-plus" aria-hidden="true"></i> Cart</a>
+            <a href="{% url 'Account_Login:Profile' %}"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+            <a href="#"><i class="fa fa-globe" aria-hidden="true"></i> Language</a>           
+          </span>
+            </div>
+        <div class="col-sm-3">
+            <h4 class="title">Category</h4>
+            <div class="category">
+            <a href="{% url 'Cataloge:Product_Index_Cakes' %}">Cakes</a>
+            <a href="{% url 'Cataloge:Product_Index_Chocolates' %}">Chocolate</a>
+			<a href="{% url 'Cataloge:Product_Index_Gifts' %}">Gifts</a><h4 class="title">Relation</h4>
+            <a href="{% url 'Cataloge:Product_Index_Parents' %}">Parents</a>
+            <a href="{% url 'Cataloge:Product_Index_Siblings' %}">Siblings</a>
+            <a href="{% url 'Cataloge:Product_Index_Kids' %}">Kids</a>
+            <a href="{% url 'Cataloge:Product_Index_Boyfriend' %}">Boyfriend</a>
+            <a href="{% url 'Cataloge:Product_Index_Girlfriend' %}">Girlfriend</a><h4 class="title">Occasion</h4>
+            <a href="{% url 'Cataloge:Product_Index_Birthday' %}">Birthdays</a>
+            <a href="{% url 'Cataloge:Product_Index_Anniversary' %}">Anniversary</a>
+            <a href="{% url 'Cataloge:Product_Index_Weddings' %}">Weddings</a>          
+            </div>
+            </div>
+        <div class="col-sm-3">
+            <h4 class="title">Payment Methods</h4>
+            <p>Various Methord of Payment</p>
+            <ul class="payment">
+            <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>            
+            <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
+            </ul>
+            </div>
+        </div>
+        <hr>
+        
+        <div class="row text-center"> © 2020. Cake n Bake.</div>
+        </div>
+        
+        
+    </footer></body><script src="https://use.fontawesome.com/07b0ce5d10.js"></script>
+{% endblock %}

@@ -1,0 +1,232 @@
+<html>
+<head><title>Checkout</title>
+{% load static %}
+<link rel="shortcut icon" type="image/png" href="{%  static 'Cake.ico' %}"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Croissant+One|Ruluko|Courgette" rel="stylesheet">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+	padding-bottom:20px;
+}
+
+.navbar-default {
+    background-color: #000000;
+    border-color: #000000;
+	margin-bottom:0px;
+}
+
+/* Title */
+.navbar-default .navbar-brand {
+    color: #ffffff;
+	font-family: 'Croissant One', cursive;
+	
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color:#F909B4;
+}
+/* Link */
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color:#F909B4;
+}
+.navbar-nav{
+text-align: center;
+}
+@media (min-width: 768px) {
+  ul.nav li:hover > ul.dropdown-menu {
+    display: block;
+  }
+ .contain{
+min-height:100%;
+position:relative;
+} 
+.footer {
+    padding: 50px 20px;
+    background-color: #35404f;
+	margin:0;
+	width:100vw;
+    color: #878c94;
+}
+.footer .title{text-align: left;color:#fff;font-size:25px;}
+ .footer .social-icon{padding:0px;margin:0px;}
+.footer .social-icon a{display:inline-block;color:#fff;font-size:25px;padding:5px;}
+.footer .acount-icon a{display:block;color:#fff;font-size:18px;padding:5px;text-decoration:none;}
+.footer .acount-icon .fa{margin-right:25px;}
+
+
+.footer .category a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 20px;
+    margin: 1px;
+    border-radius:4px;
+    margin-top: 6px;
+    background-color: black;
+    border: solid 1px #fff;
+}
+
+.footer .payment{margin:0px;padding:0px;list-style-type:none}
+.footer .payment li{list-style-type:none}
+.footer .payment li a {
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    float: left;
+    font-size: 25px;
+    padding: 10px 10px;
+}
+.container-Foot{
+}
+.container-Body{ 
+height: 60%; 
+width: 100%;
+padding-top:0px;
+padding-bottom:30px;
+
+}
+
+
+</style>
+</head>
+<body style="background:transparent url('/Static/Pic/img7.jpg') no-repeat center /cover";width='100%'>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+	<div class="navbar-header">
+      <a class="navbar-brand" href="{% url 'Account_Login:Home' %}">Cake n Bake</a>
+    </div>
+	<div style ="margin-left:400px">
+    <ul class="nav navbar-nav navbar-center">
+	    <li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-family: 'Courgette', cursive;font-size:18px;">Shop By Category</a>
+			<ul class="dropdown-menu" role="menu" style="font-family: 'Courgette', cursive;font-size:18px;">
+			<li><a href="{% url 'Cataloge:Product_Index_Cakes' %}">Cakes</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Chocolates' %}">Chocolates</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Gifts' %}">Gifts</a></li>
+		</ul></li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-family: 'Courgette', cursive;font-size:18px;">Shop By Relation</a>
+			<ul class="dropdown-menu" role="menu" style="font-family: 'Courgette', cursive;font-size:18px;">
+			<li><a href="{% url 'Cataloge:Product_Index_Parents' %}">Parents</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Siblings' %}">Siblings</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Kids' %}">kids</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Girlfriend' %}">Girlfriend</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Boyfriend' %}">Boyfriend</a></li>
+		</ul></li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-family: 'Courgette', cursive;font-size:18px;">Shop By Occasion</a>
+			<ul class="dropdown-menu" role="menu" style="font-family: 'Courgette', cursive;font-size:18px;">
+			<li><a href="{% url 'Cataloge:Product_Index_Birthday' %}">Birthdays</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Anniversary' %}">Anniversary</a></li>
+			<li><a href="{% url 'Cataloge:Product_Index_Weddings' %}">Weddings</a></li>
+		</ul></li>
+    
+    </ul>
+	</div>
+	<div>
+    <ul class="nav navbar-nav navbar-right" style="font-family: 'Courgette', cursive;font-size:18px;">
+      <li><a href="{% url 'Services:Cart_View' request.user %}"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+	  {% if user.is_authenticated %}
+	  <li style="font-family: 'Courgette', cursive;font-size:18px;"><a>Hello  
+	  
+		{{request.user}}
+		{% if request.user.profile.pic %}
+		<img src="{{request.user.profile.pic.url}}" class="img-circle" width="30px" height="30px"/>
+		{% endif %}</a>
+	  {% else %}
+		<li><a href="{% url 'Account_Login:Here' %}">Login</a></li>
+	  {% endif %}
+<ul class="dropdown-menu" role="menu" style="font-family: 'Courgette', cursive;font-size:18px;">
+			<li><a href="{% url 'Services:Myorder' request.user %}">My Orders</a></li>
+			<li><a href="{% url 'Services:Wishlist' request.user %}">Wishlist</a></li>
+			<li><a href="{% url 'Account_Login:Profile' %}">Profile</a></li>
+			<li><a href="{% url 'Account_Login:Logout' %}">Logout</a></li>
+		</ul></li>
+    </ul>
+  </div>
+  </div>
+  </nav>
+<div class = "contain">
+<div class="container" style="margin-top:30px">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Shipping Details</div>
+					<div class="panel-body">
+<form action='' method='post' enctype="multipart/form-data">
+{% csrf_token %}
+{{form.as_p}}
+<button type="submit" class="btn btn-primary btn-md">Place Order</button>
+</form>
+
+</div></div></div></div>
+<footer class="footer">
+    <div class="container-Foot">
+        <div class="row">
+        <div class="col-sm-3">
+		<img src="/Static/Cake.ico" style="width:50px;height:auto;margin-top:8px;" class="navbar-logo pull-left"/>
+            <h4 class="title">Fluffy Oven</h4>
+            <p>Birthdays, proposals, baby showers or farewells, weddings or anniversaries, Fluffy Oven will help you create them effortlessly.</p>
+			<a href="{% url 'Account_Login:About' %}">Wanna Know More..</a>
+            <ul class="social-icon">
+            <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+            </ul>
+            </div>
+        <div class="col-sm-3">
+            <h4 class="title">My Account</h4>
+            <span class="acount-icon">          
+            <a href="{% url 'Services:Wishlist' request.user %}"><i class="fa fa-heart" aria-hidden="true"></i> Wish List</a>
+            <a href="{% url 'Services:Cart_View' request.user %}"><i class="fa fa-cart-plus" aria-hidden="true"></i> Cart</a>
+            <a href="{% url 'Account_Login:Profile' %}"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>        
+          </span>
+            </div>
+        <div class="col-sm-3">
+            <h4 class="title">Category</h4>
+            <div class="category">
+            <a href="{% url 'Cataloge:Product_Index_Cakes' %}">Cakes</a>
+            <a href="{% url 'Cataloge:Product_Index_Chocolates' %}">Chocolate</a>
+			<a href="{% url 'Cataloge:Product_Index_Gifts' %}">Gifts</a><h4 class="title">Relation</h4>
+            <a href="{% url 'Cataloge:Product_Index_Parents' %}">Parents</a>
+            <a href="{% url 'Cataloge:Product_Index_Siblings' %}">Siblings</a>
+            <a href="{% url 'Cataloge:Product_Index_Kids' %}">Kids</a>
+            <a href="{% url 'Cataloge:Product_Index_Boyfriend' %}">Boyfriend</a>
+            <a href="{% url 'Cataloge:Product_Index_Girlfriend' %}">Girlfriend</a><h4 class="title">Occasion</h4>
+            <a href="{% url 'Cataloge:Product_Index_Birthday' %}">Birthdays</a>
+            <a href="{% url 'Cataloge:Product_Index_Anniversary' %}">Anniversary</a>
+            <a href="{% url 'Cataloge:Product_Index_Weddings' %}">Weddings</a>          
+            </div>
+            </div>
+        <div class="col-sm-3">
+            <h4 class="title">Payment Methods</h4>
+            <p>Various Methord of Payment</p>
+            <ul class="payment">
+            <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>            
+            <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
+            </ul>
+            </div>
+        </div>
+        <hr>
+        
+        <div class="row text-center"> © 2020. Fluffy Oven.</div>
+        </div>
+        
+        
+    </footer><script src="https://use.fontawesome.com/07b0ce5d10.js"></script></body>
+</body>
+</html>
