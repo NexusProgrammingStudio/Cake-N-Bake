@@ -29,11 +29,6 @@ ALLOWED_HOSTS = []
 
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    #EMAIL_HOST = 'smtp.gmail.com'
-    #EMAIL_HOST_USER = 'NexusProgrammingStudioTeam@gmail.com'
-    #EMAIL_HOST_PASSWORD = 'bmpzbzitanhzarjr'
-    #EMAIL_PORT = 587
-    #EMAIL_USE_TLS = True
     DEFAULT_FROM_EMAIL = 'Nexus Programming Studio Team <noreply@cake_n_bake.com>'
     EMAIL_HOST = 'localhost'
     EMAIL_PORT = '1025'
